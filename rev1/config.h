@@ -36,6 +36,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_COL_PINS { F5, F6, F7, B1, B3 }
 // #define MATRIX_COL_PINS { B2, B3, B1, F7, F6, F5, F4 } //uncomment this line and comment line above if you need to reverse left-to-right key order
 
+#define QMK_ESC_OUTPUT F5 //usually col
+#define QMK_ESC_INPUT C6 //usually row
+#define QMK_LED B0
+
 /* define if matrix has ghost */
 //#define MATRIX_HAS_GHOST
 
