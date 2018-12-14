@@ -70,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           LALT_T(KC_Q), KC_W, KC_E, KC_R, KC_T,       KC_Y, KC_U, KC_I, KC_O, RALT_T(KC_P),
           LCTL_T(KC_A), KC_S, KC_D, KC_F, KC_G,       KC_H, KC_J, KC_K, KC_L, RCTL_T(KC_MINUS),
           LSFT_T(KC_Z), KC_X, KC_C, KC_V, KC_B,       KC_N, KC_M, KC_COMM, KC_DOT, RSFT_T(KC_ENT),
-          ____,           ____,   ____,   ____,       ____,   ____,   ____,   ____
+          LCTL_T(KC_ESC), LT(_ARROW, KC_F10), LT(_LOWER, KC_TAB), LT(_LOWER, KC_SPC),    LT(_RAISE, KC_ENT), KC_BSPC, TD(TD_IME), TD(TD_ALT_GUI)
 ),
 
 [_TRANS] = LAYOUT(
@@ -84,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             EXLM, AT,   HASH, DLR,  PERC,    CIRC, AMPR, ASTR, LPRN, RPRN,
             1,    2,    3,    4,    5,       6,    7,    8,    9,    0,
             ____, ____, ____, ____, ____,    ____, ____, ____, ____, ____,
-            ____,   ____,   ____,   ____,    ADJUST,  END,   ____,   ____
+            ____,   ____,   ____,   ____,    ADJUST, DELETE,  ____,  ____
 ),
 
 [_RAISE] = LAYOUT_kc( \
@@ -105,7 +105,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             LALT, ____, ____, ____, ____,    B_BK, WH_U, MS_U, NO,   VOLU,
             LCTL, ____, ____, ____, ____,    MS_L, MS_L, MS_D, MS_R, PSCR,
             LSFT, ____, ____, ____, ____,    MS_BTN1, WH_D, MS_BTN2, ____, VOLD,
-            ESC,    LGUI,   ____,   ____,    MS_BTN1, MS_BTN2, ____, ____
+            ESC,    LGUI,   ____,   ____,    MS_BTN1, MS_BTN2, ____, DF
 ),
 
 [_ADJUST] = LAYOUT( \
