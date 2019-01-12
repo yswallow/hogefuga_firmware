@@ -35,11 +35,12 @@ enum macro_keycodes {
 #define KC_RESET RESET
 #define KC_B_BK LALT(KC_LEFT) //ブラウザバック
 #define KC_ADJUST MO(_ADJUST)
-#define ____ KC_NO
+#define ____ KC_TRNS
 #define KC_MOUSE MO(_MOUSE)
 #define KC_ARROW MO(_ARROW)
 #define KC_DF TO(_TRANS)
 #define KC_CTL_L LM(_TRANS, KC_LCTL)
+//#define KC_MXLM LT(_MOUSE, KC_EXLM)
 
 //Tap Dance Declarations
 enum {
@@ -70,10 +71,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           LALT_T(KC_Q), KC_W, KC_E, KC_R, KC_T,       KC_Y, KC_U, KC_I, KC_O, RALT_T(KC_P),
           LCTL_T(KC_A), KC_S, KC_D, KC_F, KC_G,       KC_H, KC_J, KC_K, KC_L, RCTL_T(KC_MINUS),
           LSFT_T(KC_Z), KC_X, KC_C, KC_V, KC_B,       KC_N, KC_M, KC_COMM, KC_DOT, RSFT_T(KC_ENT),
-          LCTL_T(KC_ESC), LT(_ARROW, KC_F10), LT(_LOWER, KC_TAB), LT(_LOWER, KC_SPC),    LT(_RAISE, KC_ENT), KC_BSPC, TD(TD_IME), TD(TD_ALT_GUI)
+            ____,   ____,   ____,   ____,   ____,   ____,   ____,   ____ 
 ),
 
-[_TRANS] = LAYOUT(
+[_TRANS] = LAYOUT_kc(
             ____, ____, ____, ____, ____,   ____, ____, ____, ____, ____,
             ____, ____, ____, ____, ____,   ____, ____, ____, ____, ____, 
             ____, ____, ____, ____, ____,   ____, ____, ____, ____, ____,
@@ -83,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = LAYOUT_kc( \
             EXLM, AT,   HASH, DLR,  PERC,    CIRC, AMPR, ASTR, LPRN, RPRN,
             1,    2,    3,    4,    5,       6,    7,    8,    9,    0,
-            ____, ____, ____, ____, ____,    ____, ____, ____, ____, ____,
+            MOUSE, ____, ____, ____, ____,    ____, ____, ____, ____, ____,
             ____,   ____,   ____,   ____,    ADJUST, DELETE,  ____,  ____
 ),
 
@@ -114,12 +115,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             ____, ____, ____, ____, ____,                   ____, TO(_MOUSE), ____, ____, ____,
             ____,   ____,   ____,   ____,                   ____,   ____,   ____,   ____
 )
-/*
-[_ADJUST] = LAYOUT_kc( \
-  //,-------------.   ,-------------.
-         F1,    F2,        F4,    F5,\
-  //|------+------|   |------+------|
-         F3, LOWER,     RAISE,    F6 \
-  //|------+------|   |------+------|
-)*/
 };
