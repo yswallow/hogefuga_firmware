@@ -40,6 +40,7 @@ enum macro_keycodes {
 #define KC_ARROW MO(_ARROW)
 #define KC_DF TO(_TRANS)
 #define KC_CTL_L LM(_TRANS, KC_LCTL)
+#define KC_REDO LCTL(KC_Z)
 //#define KC_MXLM LT(_MOUSE, KC_EXLM)
 
 //Tap Dance Declarations
@@ -84,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = LAYOUT_kc( \
             EXLM, AT,   HASH, DLR,  PERC,    CIRC, AMPR, ASTR, LPRN, RPRN,
             1,    2,    3,    4,    5,       6,    7,    8,    9,    0,
-            MOUSE, ____, ____, ____, ____,    ____, ____, ____, ____, ____,
+            REDO, MOUSE, ____, ____, ____,    ____, ____, ____, ____, ____,
             ____,   ____,   ____,   ____,    ADJUST, DELETE,  ____,  ____
 ),
 
