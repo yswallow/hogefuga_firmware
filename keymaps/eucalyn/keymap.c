@@ -41,6 +41,7 @@ enum macro_keycodes {
 #define KC_DF TO(_TRANS)
 #define KC_CTL_L LM(_TRANS, KC_LCTL)
 #define KC_REDO LCTL(KC_Z)
+#define KC_FDEL S(KC_DEL)
 //#define KC_MXLM LT(_MOUSE, KC_EXLM)
 
 //Tap Dance Declarations
@@ -62,10 +63,10 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_EUCALYN] = LAYOUT( \
-          LALT_T(KC_Q), KC_W, KC_COMM, KC_DOT, KC_MINUS,       KC_M, KC_Y, KC_K, KC_R, RALT_T(KC_P),
+          LALT_T(KC_Q), KC_MINUS, KC_COMM, KC_DOT, KC_W,       KC_M, KC_Y, KC_K, KC_R, RALT_T(KC_P),
           LCTL_T(KC_A), KC_O, KC_E, KC_I, KC_U,       KC_N, KC_H, KC_J, KC_L, RCTL_T(KC_G),
           LSFT_T(KC_Z), KC_X, KC_C, KC_V, KC_F,       KC_S, KC_T, KC_D, KC_B, RSFT_T(KC_ENT),
-          LCTL_T(KC_ESC), LT(_ARROW, KC_F10), LT(_LOWER, KC_TAB), LT(_LOWER, KC_SPC),    LT(_RAISE, KC_ENT), KC_BSPC, TD(TD_IME), TD(TD_ALT_GUI)
+          LCTL_T(KC_ESC), LT(_ARROW, KC_F10), LT(_LOWER, KC_TAB), LT(_LOWER, KC_SPC),    LT(_RAISE, KC_ENT), KC_BSPACE, TD(TD_IME), TD(TD_ALT_GUI)
 ),
 
 [_QWERTY] = LAYOUT( \
@@ -85,8 +86,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = LAYOUT_kc( \
             EXLM, AT,   HASH, DLR,  PERC,    CIRC, AMPR, ASTR, LPRN, RPRN,
             1,    2,    3,    4,    5,       6,    7,    8,    9,    0,
-            REDO, MOUSE, ____, ____, ____,    ____, ____, ____, ____, ____,
-            ____,   ____,   ____,   ____,    ADJUST, DELETE,  ____,  ____
+            MOUSE,REDO, ____, ____, ____,    ____, ____, ____, ____, ____,
+            ____,   ____,   ____,   ____,    ADJUST, DELETE, FDEL,  ____
 ),
 
 [_RAISE] = LAYOUT_kc( \
