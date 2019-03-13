@@ -5,6 +5,8 @@
   #include "split_util.h"
 #endif
 
+#include "keymap_jp.h"
+
 extern keymap_config_t keymap_config;
 
 #ifdef RGBLIGHT_ENABLE
@@ -20,11 +22,15 @@ extern uint8_t is_master;
 // entirely and just use numbers.
 #define _EUCALYN 0
 #define _QWERTY 1
-#define _TRANS 2
-#define _LOWER 3
-#define _RAISE 4
-#define _ARROW 6
-#define _MOUSE 8
+#define _EUCALYN_J 2
+#define _QWERTY_J 3
+#define _TRANS 4
+#define _LOWER 8
+#define _RAISE 9
+#define _LOWER_J 10
+#define _RAISE_J 11
+#define _ARROW 12
+#define _MOUSE 13
 #define _ADJUST 16
 
 enum macro_keycodes {
@@ -76,6 +82,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             ____,   ____,   ____,   ____,   ____,   ____,   ____,   ____ 
 ),
 
+[_EUCALYN_J] = LAYOUT( \
+          LALT_T(KC_Q), KC_MINUS, KC_COMM, KC_DOT, KC_W,       KC_M, KC_Y, KC_K, KC_R, RALT_T(KC_P),
+          LCTL_T(KC_A), KC_O, KC_E, KC_I, KC_U,       KC_N, KC_H, KC_J, KC_L, RCTL_T(KC_G),
+          LSFT_T(KC_Z), KC_X, KC_C, KC_V, KC_F,       KC_S, KC_T, KC_D, KC_B, RSFT_T(KC_ENT),
+          LCTL_T(KC_ESC), LT(_ARROW, KC_F10), LT(_LOWER_J, KC_TAB), LT(_LOWER_J, KC_SPC),    LT(_RAISE_J, KC_ENT), KC_BSPACE, TD(TD_IME), TD(TD_ALT_GUI)
+),
+
+[_QWERTY_J] = LAYOUT( \
+          LALT_T(KC_Q), KC_W, KC_E, KC_R, KC_T,       KC_Y, KC_U, KC_I, KC_O, RALT_T(KC_P),
+          LCTL_T(KC_A), KC_S, KC_D, KC_F, KC_G,       KC_H, KC_J, KC_K, KC_L, RCTL_T(KC_MINUS),
+          LSFT_T(KC_Z), KC_X, KC_C, KC_V, KC_B,       KC_N, KC_M, KC_COMM, KC_DOT, RSFT_T(KC_ENT),
+            ____,   ____,   ____,   ____,   ____,   ____,   ____,   ____ 
+),
+
 [_TRANS] = LAYOUT_kc(
             ____, ____, ____, ____, ____,   ____, ____, ____, ____, ____,
             ____, ____, ____, ____, ____,   ____, ____, ____, ____, ____, 
@@ -97,6 +117,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             ESC,    LGUI,   ____, ADJUST,    ____,   ____,   ____,  ____
 ),
 
+[_LOWER_J] = LAYOUT( \
+            KC_EXLM,  JP_AT,   KC_HASH, KC_DLR,  KC_PERC,    JP_CIRC, JP_AMPR, JP_ASTR, JP_LPRN, JP_RPRN,
+            KC_1,     KC_2,    KC_3,    KC_4,    KC_5,       KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
+            MO(_MOUSE), ____,  ____,    ____,    ____,       ____,    ____,    ____,    ____,    ____,
+            ____,        ____,       ____,       ____,       MO(_ADJUST), KC_DELETE,    ____,    ____
+
+),
+
+[_RAISE_J] = LAYOUT( \
+            KC_LALT, ____,  JP_TILD, JP_PLUS, JP_LCBR,    JP_RCBR, JP_COLN, JP_DQT,  JP_QUES, JP_PIPE,
+            KC_LCTL, ____,  JP_GRV,  JP_EQL,  JP_LBRC,    JP_RBRC, JP_SCLN, JP_QUOT, JP_SLSH, JP_BSLS,
+            KC_LSFT, ____,  ____,    ____,    ____,       ____,    ____,    ____,    JP_UNDS, JP_YEN,
+            KC_ESC,    KC_LGUI,   ____,   MO(_ADJUST),    ____,       ____,       ____,       ____
+),
+
 [_ARROW] = LAYOUT_kc( \
             LALT, F1,   F2,   F3,   F4,      ____, ____, UP,   ____, ____,
             LCTL, F5,   F6,   F7,   F8,      LEFT, LEFT, DOWN, RIGHT, ____,
@@ -113,7 +148,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_ADJUST] = LAYOUT( \
             DF(_QWERTY), ____, DF(_EUCALYN), ____, ____,    TO(_MOUSE), ____, KC_PSCR, KC_VOLU, RESET,
-            ____, ____, DF(_EUCALYN), ____, ____,           ____, ____, ____, KC_VOLD, ____,
+            ____, ____, DF(_EUCALYN), ____, ____,           ____, DF(_QWERTY_J), DF(_EUCALYN_J), KC_VOLD, ____,
             ____, ____, ____, ____, ____,                   ____, TO(_MOUSE), ____, ____, ____,
             ____,   ____,   ____,   ____,                   ____,   ____,   ____,   ____
 )

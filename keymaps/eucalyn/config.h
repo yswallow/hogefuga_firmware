@@ -53,3 +53,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #define CATERINA_BOOTLOADER
 
+#define MAGIC_KEY_EEPROM_CLEAR BSPACE
+
+#define BOOTMAGIC_KEY_SALT KC_F
+#define BOOTMAGIC_KEY_DEFAULT_LAYER_0 KC_E
+#define BOOTMAGIC_KEY_DEFAULT_LAYER_1 KC_Q
+#define BOOTMAGIC_KEY_DEFAULT_LAYER_2 KC_J
