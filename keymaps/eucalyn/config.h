@@ -51,11 +51,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_SAT_STEP 17
 #define RGBLIGHT_VAL_STEP 17
 */
-#define CATERINA_BOOTLOADER
+//#define CATERINA_BOOTLOADER
 
-#define MAGIC_KEY_EEPROM_CLEAR BSPACE
-
+/*
 #define BOOTMAGIC_KEY_SALT KC_F
 #define BOOTMAGIC_KEY_DEFAULT_LAYER_0 KC_E
 #define BOOTMAGIC_KEY_DEFAULT_LAYER_1 KC_Q
 #define BOOTMAGIC_KEY_DEFAULT_LAYER_2 KC_J
+*/
+
+// Command configuration
+#define MAGIC_KEY_EEPROM F
+#define MAGIC_KEY_SWITCH_LAYER_WITH_NKEYS false
+#define MAGIC_KEY_SWITCH_LAYER_WITH_CUSTOM true
+#define MAGIC_KEY_LAYER0 E
+#define MAGIC_KEY_LAYER1 Q
+#define MAGIC_KEY_LAYER2 J
+#define MAGIC_KEY_LAYER3 N
+#define MAGIC_KEY_LAYER0_ALT1 DELETE
+

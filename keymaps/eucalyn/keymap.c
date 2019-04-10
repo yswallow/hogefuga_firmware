@@ -24,7 +24,7 @@ extern uint8_t is_master;
 #define _QWERTY 1
 #define _EUCALYN_J 2
 #define _QWERTY_J 3
-#define _TRANS 4
+//#define _TRANS 4
 #define _LOWER 8
 #define _RAISE 9
 #define _LOWER_J 10
@@ -79,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           LALT_T(KC_Q), KC_W, KC_E, KC_R, KC_T,       KC_Y, KC_U, KC_I, KC_O, RALT_T(KC_P),
           LCTL_T(KC_A), KC_S, KC_D, KC_F, KC_G,       KC_H, KC_J, KC_K, KC_L, RCTL_T(KC_MINUS),
           LSFT_T(KC_Z), KC_X, KC_C, KC_V, KC_B,       KC_N, KC_M, KC_COMM, KC_DOT, RSFT_T(KC_ENT),
-            ____,   ____,   ____,   ____,   ____,   ____,   ____,   ____ 
+          LCTL_T(KC_ESC), LT(_ARROW, KC_F10), LT(_LOWER, KC_TAB), LT(_LOWER, KC_SPC),    LT(_RAISE, KC_ENT), KC_BSPACE, TD(TD_IME), TD(TD_ALT_GUI)
 ),
 
 [_EUCALYN_J] = LAYOUT( \
@@ -93,14 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           LALT_T(KC_Q), KC_W, KC_E, KC_R, KC_T,       KC_Y, KC_U, KC_I, KC_O, RALT_T(KC_P),
           LCTL_T(KC_A), KC_S, KC_D, KC_F, KC_G,       KC_H, KC_J, KC_K, KC_L, RCTL_T(KC_MINUS),
           LSFT_T(KC_Z), KC_X, KC_C, KC_V, KC_B,       KC_N, KC_M, KC_COMM, KC_DOT, RSFT_T(KC_ENT),
-            ____,   ____,   ____,   ____,   ____,   ____,   ____,   ____ 
-),
-
-[_TRANS] = LAYOUT_kc(
-            ____, ____, ____, ____, ____,   ____, ____, ____, ____, ____,
-            ____, ____, ____, ____, ____,   ____, ____, ____, ____, ____, 
-            ____, ____, ____, ____, ____,   ____, ____, ____, ____, ____,
-            ____,   ____,   ____,   ____,   ____,   ____,   ____,   ____ 
+          LCTL_T(KC_ESC), LT(_ARROW, KC_F10), LT(_LOWER_J, KC_TAB), LT(_LOWER_J, KC_SPC),    LT(_RAISE_J, KC_ENT), KC_BSPACE, JP_ZHTG, TD(TD_ALT_GUI)
 ),
 
 [_LOWER] = LAYOUT_kc( \
@@ -126,9 +119,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_RAISE_J] = LAYOUT( \
-            KC_LALT, ____,  JP_TILD, JP_PLUS, JP_LCBR,    JP_RCBR, JP_COLN, JP_DQT,  JP_QUES, JP_PIPE,
-            KC_LCTL, ____,  JP_GRV,  JP_EQL,  JP_LBRC,    JP_RBRC, JP_SCLN, JP_QUOT, JP_SLSH, JP_BSLS,
-            KC_LSFT, ____,  ____,    ____,    ____,       ____,    ____,    ____,    JP_UNDS, JP_YEN,
+            KC_LALT, JP_UNDS,  JP_TILD, JP_PLUS, JP_LCBR,    JP_RCBR, JP_COLN, JP_DQT,  JP_QUES, JP_PIPE,
+            KC_LCTL, JP_YEN,  JP_GRV,  JP_EQL,  JP_LBRC,    JP_RBRC, JP_SCLN, JP_QUOT, JP_SLSH, JP_BSLS,
+            KC_LSFT, ____,  ____,    ____,    ____,       ____,    ____,    ____,    ____, ____,
             KC_ESC,    KC_LGUI,   ____,   MO(_ADJUST),    ____,       ____,       ____,       ____
 ),
 
@@ -142,14 +135,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_MOUSE] = LAYOUT_kc( \
             LALT, ____, ____, ____, ____,    B_BK, WH_U, MS_U, NO,   VOLU,
             LCTL, ____, ____, ____, ____,    MS_L, MS_L, MS_D, MS_R, PSCR,
-            LSFT, ____, ____, ____, ____,    MS_BTN1, WH_D, MS_BTN2, ____, VOLD,
-            ESC,    LGUI,   ____,   ____,    MS_BTN1, MS_BTN2, ____, DF
+            LSFT, ____, ____, ____, ____,    MS_BTN1, WH_D, MS_BTN2, NO, VOLD,
+            ESC,    LGUI,   ____,   ____,    MS_BTN1, MS_BTN2, NO, NO
 ),
 
 [_ADJUST] = LAYOUT( \
-            DF(_QWERTY), ____, DF(_EUCALYN), ____, ____,    TO(_MOUSE), ____, KC_PSCR, KC_VOLU, RESET,
+            DF(_QWERTY), ____, DF(_EUCALYN), ____, ____,    ____, ____, KC_PSCR, KC_VOLU, RESET,
             ____, ____, DF(_EUCALYN), ____, ____,           ____, DF(_QWERTY_J), DF(_EUCALYN_J), KC_VOLD, ____,
-            ____, ____, ____, ____, ____,                   ____, TO(_MOUSE), ____, ____, ____,
+            ____, ____, ____, ____, ____,                   ____, ____, ____, ____, ____,
             ____,   ____,   ____,   ____,                   ____,   ____,   ____,   ____
 )
 };
