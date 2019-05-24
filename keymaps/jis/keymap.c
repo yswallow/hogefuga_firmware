@@ -67,8 +67,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_RAISE] = LAYOUT( \
-            KC_LALT, ____,  JP_TILD, JP_PLUS, JP_LCBR,    JP_RCBR, JP_COLN, JP_DQT, JP_QUES, JP_PIPE,
-            KC_LCTL, ____,  JP_GRV,  JP_EQL,  JP_LBRC,    JP_RBRC, JP_SCLN, JP_QUOT, JP_SLSH, JP_BSLS,
+            KC_LALT, JP_UNDS, JP_TILD, JP_PLUS, JP_LCBR,    JP_RCBR, JP_COLN, JP_DQT, JP_QUES, JP_PIPE,
+            KC_LCTL, JP_YEN,  JP_GRV,  JP_EQL,  JP_LBRC,    JP_RBRC, JP_SCLN, JP_QUOT, JP_SLSH, JP_BSLS,
             KC_LSFT, ____,  ____,    ____,    ____,       ____,    ____,    ____,    ____,    JP_YEN,
             KC_ESC,    KC_LGUI,   ____,   MO(_ADJUST),    ____,       ____,       ____,       ____
 ),
